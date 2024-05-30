@@ -15,5 +15,10 @@ RSpec.describe Calculator do
       end
     end
 
+    context 'with two digits' do
+      it 'returns their sum' do
+        expect(Calculator.add("5,6")).to eq(11)
+      end
+    end
   end
 end
