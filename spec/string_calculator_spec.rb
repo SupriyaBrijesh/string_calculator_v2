@@ -8,5 +8,12 @@ RSpec.describe Calculator do
         expect(Calculator.add("")).to eq(0)
       end
     end
+
+    context 'with single number' do
+      it 'returns that number' do
+        expect(Calculator.add("5")).to eq(5)
+      end
+    end
+
   end
 end
