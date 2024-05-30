@@ -26,5 +26,18 @@ RSpec.describe Calculator do
         expect { Calculator.add("1,-2,3") }.to raise_error(InvalidInput, "cannot accept negative numbers: -2")
       end
     end
+
+    context 'with multiple digits' do
+      it 'returns their sum' do
+        expect(Calculator.add("1,2,3,4")).to eq(10)
+      end
+    end
+
+    context 'with delimiters' do
+      it 'handles delimiters and returns their sum' do
+        expect(Calculator.add("//;\n1;2")).to eq(3)
+        expect(Calculator.add("//|\n1|2|3")).to eq(6)
+      end
+    end
   end
 end
